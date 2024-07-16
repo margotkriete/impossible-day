@@ -28,14 +28,17 @@ function App() {
       <button onClick={getNextImage}>Next</button>
       <img src={`/src/assets/${ads[currentImageIndex]}/screensvr.png`} />
       {!isDocumentFetched && <button onClick={revealHandler}>Reveal</button>}
-      {isDocumentFetched && document ? (
+      {isDocumentFetched && document && (
         <>
           <h4>{document.author_name}</h4>
           <h4>{document.first_sentence}</h4>
           <h4>{document.first_publish_year}</h4>
         </>
-      ) : (
-        <h4>{`hallucinated book found`}</h4>
+      )}
+      {isDocumentFetched && !document && (
+        <>
+          <h4>hallucinated book found</h4>
+        </>
       )}
     </>
   );

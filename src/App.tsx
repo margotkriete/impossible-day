@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ads from "./directory_names.json";
 import formattedAds from "./formatted_books.json";
 import "./App.css";
@@ -7,13 +7,29 @@ import { OpenLibraryBook } from "./types/Books";
 
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [countdown, setCountdown] = useState(3);
   const [isDocumentFetched, setIsDocumentFetched] = useState(false);
   const [document, setDocument] = useState<OpenLibraryBook | null>(null);
   const getNextImage = function () {
+    setCountdown(3);
     setIsDocumentFetched(false);
     setDocument(null);
     setCurrentImageIndex(currentImageIndex + 1);
   };
+
+  useEffect(() => {
+    if (!countdown) {
+      const handler = async () => {
+        revealHandler();
+      };
+      handler();
+      return;
+    }
+    const interval = setInterval(function () {
+      setCountdown(countdown - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [countdown]);
 
   const revealHandler = async () => {
     const documents = await getBookInfo({
@@ -32,7 +48,7 @@ function App() {
         <button onClick={getNextImage} style={{ marginRight: "10px" }}>
           Next
         </button>
-        {!isDocumentFetched && <button onClick={revealHandler}>Reveal</button>}
+        {!isDocumentFetched && <h3>{countdown}</h3>}
       </>
       {isDocumentFetched && document && (
         <>

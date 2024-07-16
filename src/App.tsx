@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ads from "./directory_names.json";
 import formattedAds from "./formatted_books.json";
 import "./App.css";
 import { getBookInfo } from "./services/getBookInfo";
@@ -43,7 +42,7 @@ function App() {
   return (
     <>
       <img
-        src={`/src/assets/${formattedAds[currentImageIndex]}/screensvr.png`}
+        src={`/src/assets/${formattedAds[currentImageIndex]["image"]}/screensvr.png`}
       />
       <>
         <br />

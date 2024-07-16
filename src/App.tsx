@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ads from "./directory_names.json";
-import formattedAds from "./formattedBooks.json";
+import formattedAds from "./formatted_books.json";
 import "./App.css";
 import { getBookInfo } from "./services/getBookInfo";
 import { OpenLibraryBook } from "./types/Books";
@@ -28,6 +28,7 @@ function App() {
     <>
       <button onClick={getNextImage}>Next</button>
       <img src={`/src/assets/${ads[currentImageIndex]}/screensvr.png`} />
+      <h5>{formattedAds[currentImageIndex]["description"]}</h5>
       {!isDocumentFetched && <button onClick={revealHandler}>Reveal</button>}
       {isDocumentFetched && document && (
         <>

@@ -42,13 +42,15 @@ function App() {
 
   return (
     <>
-      <img src={`/src/assets/${ads[currentImageIndex]}/screensvr.png`} />
-      <h5>{formattedAds[currentImageIndex]["description"]}</h5>
+      <img
+        src={`/src/assets/${formattedAds[currentImageIndex]}/screensvr.png`}
+      />
       <>
+        <br />
         <button onClick={getNextImage} style={{ marginRight: "10px" }}>
           Next
         </button>
-        {!isDocumentFetched && <h3>{countdown}</h3>}
+        {!isDocumentFetched && <h2 style={{ color: "red" }}>{countdown}</h2>}
       </>
       {isDocumentFetched && document && (
         <>

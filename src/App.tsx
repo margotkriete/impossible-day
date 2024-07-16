@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ads from "./directory_names.json";
+import formattedAds from "./formattedBooks.json";
 import "./App.css";
 import { getBookInfo } from "./services/getBookInfo";
 import { OpenLibraryBook } from "./types/Books";
@@ -16,8 +17,8 @@ function App() {
 
   const revealHandler = async () => {
     const documents = await getBookInfo({
-      title: "lord of the rings",
-      author: "j r r tolkien",
+      title: formattedAds[currentImageIndex]["title"],
+      author: formattedAds[currentImageIndex]["author"],
     });
     setIsDocumentFetched(true);
     setDocument(documents.length > 0 ? documents[0] : null);

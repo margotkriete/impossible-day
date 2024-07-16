@@ -64,6 +64,10 @@ function App() {
           <h4>hallucinated book found</h4>
         </>
       )}
+      <br />
+      <a href="https://maxread.substack.com/p/my-kindle-thinks-im-stupid-now">
+        Inspiration
+      </a>
     </>
   );
 }

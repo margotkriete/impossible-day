@@ -50,7 +50,7 @@ function App() {
         <button onClick={getNextImage} style={{ marginRight: "10px" }}>
           Next
         </button>
-        {!isDocumentFetched && <h3>{countdown}</h3>}
+        {!isDocumentFetched && <h3 style={{ color: "red" }}>{countdown}</h3>}
       </>
       {isDocumentFetched && document && (
         <>

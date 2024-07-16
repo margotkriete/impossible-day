@@ -6,6 +6,7 @@ import { getBookInfo } from "./services/getBookInfo";
 import { OpenLibraryBook } from "./types/Books";
 
 function App() {
+  console.log(formattedAds);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isDocumentFetched, setIsDocumentFetched] = useState(false);
   const [document, setDocument] = useState<OpenLibraryBook | null>(null);
@@ -27,7 +28,7 @@ function App() {
   return (
     <>
       <img src={`/src/assets/${ads[currentImageIndex]}/screensvr.png`} />
-      <h5>{formattedAds[currentImageIndex]["description"]}</h5>
+      {/* <h5>{formattedAds[currentImageIndex]["description"]}</h5> */}
       <>
         <button onClick={getNextImage} style={{ marginRight: "10px" }}>
           Next

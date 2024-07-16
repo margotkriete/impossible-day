@@ -5,7 +5,6 @@ import { getBookInfo } from "./services/getBookInfo";
 import { OpenLibraryBook } from "./types/Books";
 
 function App() {
-  console.log(formattedAds);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [countdown, setCountdown] = useState(3);
   const [isDocumentFetched, setIsDocumentFetched] = useState(false);

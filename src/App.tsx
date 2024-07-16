@@ -26,10 +26,14 @@ function App() {
 
   return (
     <>
-      <button onClick={getNextImage}>Next</button>
       <img src={`/src/assets/${ads[currentImageIndex]}/screensvr.png`} />
       <h5>{formattedAds[currentImageIndex]["description"]}</h5>
-      {!isDocumentFetched && <button onClick={revealHandler}>Reveal</button>}
+      <>
+        <button onClick={getNextImage} style={{ marginRight: "10px" }}>
+          Next
+        </button>
+        {!isDocumentFetched && <button onClick={revealHandler}>Reveal</button>}
+      </>
       {isDocumentFetched && document && (
         <>
           <h4>{document.author_name}</h4>

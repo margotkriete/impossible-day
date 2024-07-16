@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ads from "./directory_names.json";
-import formattedAds from "./formattedBooks.json";
+import formattedAds from "./formatted_books.json";
 import "./App.css";
 import { getBookInfo } from "./services/getBookInfo";
 import { OpenLibraryBook } from "./types/Books";

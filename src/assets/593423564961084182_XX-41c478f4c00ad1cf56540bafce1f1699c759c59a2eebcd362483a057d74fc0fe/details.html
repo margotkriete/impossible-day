@@ -1,0 +1,319 @@
+<!DOCTYPE html><html peggy=""><head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js" peggy-remove="true"></script>
+    <script type="text/javascript" src="http://warhol.amazon.com/static/template-static-assets/scripts/release/peggy-v0.3.js" peggy-remove="true"></script>
+    <script type="text/javascript" src="widget://com.lab126.adviewer/scripts/adviewer.js"></script>
+    <script type="text/javascript" src="widget://com.lab126.adviewer/lib/jquery.js"></script>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <style>
+
+
+
+
+
+
+
+
+
+
+ 
+  body {
+    font-family:sans-serif;
+    width:580px;
+    font-size:13pt;
+    line-height:1.2em;
+    margin:5px 10px;
+}
+
+body.postj2 {
+    font-size:7.2pt;
+}
+
+body.postj4 {
+    font-size: 17px;
+}
+
+.page {
+    height:700px;
+    clear: both;
+}
+
+.content {
+    clear:both;
+    margin:5px;
+    padding-top: 20px;
+    text-align: justify;
+}
+
+h1 {
+    font-family:Arial,sans-serif;
+    font-style: bold;
+    font-size: 15pt;
+    margin: 5px 0px 0px 0px;
+}
+
+body.postj2 h1 {
+    font-size: 8.3pt;
+}
+
+body.postj4 h1 {
+    font-size: 19px;
+}
+
+h2 {
+    font-family:Arial,sans-serif;
+    font-style: italic;
+    font-size: 13pt;
+    margin: 10px 0px 0px 0px;
+}
+
+body.postj2 h2 {
+    font-size: 7.2pt;
+}
+
+h3 {
+    font-style: bold;
+    font-size: 13pt;
+    margin: 15px 0 2px 0;
+}
+
+body.postj2 h3 {
+    font-size: 7.2pt;
+}
+
+header {
+    font-weight:700;
+    font-size:13pt;
+    margin: 5px 5px 10px 0px;
+}
+
+body.postj2 header {
+    font-size: 7.2pt;
+}
+
+em {
+    font-size:13pt;
+    font-weight:700;
+    font-style:normal;
+}
+
+body.postj2 em {
+    font-size:7.2pt;
+}
+
+li {
+    margin: 0px 0px 0px 20px;    
+}
+
+a span,a li,.activeLink {
+    border-bottom:1px dotted;
+}
+
+.activeLink:hover {
+    color:#FFFFFF;
+    background-color:#000000;
+}
+
+.solidBottom {
+    border-bottom:1px solid;
+    color: black;
+    display: inline-block;
+    line-height: 130%;
+    text-decoration: none;
+}
+
+.linkClicked {
+    font-style: italic;
+}
+
+a {
+    color:#000;
+    text-decoration:none;
+}
+
+div.hr {
+    border-top:1px dashed;
+    height:0;
+}
+
+ul,figure {
+    margin:0;
+    padding:0;
+}
+
+img {
+    margin: 5px;
+    vertical-align: top;
+}
+.headline {
+    clear: both;
+    margin: 15px 0 10px 0;
+}
+.subheadline {
+    font-size:13pt;
+    color:#666;
+    font-weight:700;
+}
+
+body.postj2 .subheadline {
+    font-size:7.2pt;
+}
+
+.summary {
+    font-size:18px;
+    font-weight: normal;
+    line-height: 125%;
+}
+
+body.postj2 .summary {
+    font-size:10pt;
+}
+
+.fineprint {
+    font-size:18px;
+    font-weight: normal;
+    line-height: 125%;
+}
+
+body.postj2 .fineprint {
+    font-size:10pt;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.action {
+    margin: 50px 20px 50px 20px;
+    vertical-align: bottom;
+    float: right;
+    font-family: Caecilia LTStd,Arial,sans-serif; 
+}
+
+.emaillink {
+    position: absolute;
+    top: 620px;
+    left: 20px;
+    text-align: right;
+    width: 560px;
+    font-size:16pt;
+    font-family: Caecilia LTStd,Arial,sans-serif; 
+}
+
+body.postj2 .emaillink {
+    font-size:8.9pt;
+}
+
+.returnToMain, .cancelByAccident {
+    position: absolute;
+    left: 200px;
+    text-align: right;
+    width: 380px;
+    font-family: Caecilia LTStd,Arial,sans-serif; 
+}
+
+.cancelByAccident {
+    left: 100px;
+    width: 480px;
+}
+
+.buy-kso {
+    background-color: #E8E8E8;
+    float: right;
+    font-weight: 700;
+    text-align: center;
+    margin: 8px 10px 0px 0px;
+    line-height: 1em;
+    width: 142px;
+    font-size: 16px;
+}
+
+body.postj2 .buy-kso {
+    font-size: 7.2pt;
+}
+
+a.buy-kso:hover {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+}
+
+.rounded {
+    border: 1px solid #000000;
+    border-radius: 7px;
+    padding: 3px 5px 8px 5px;
+}
+
+
+
+
+
+
+
+#image1 {
+    float: left;
+    margin: 0px 20px 0px 5px;
+}
+ 
+</style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("a.activeLink.transitional-button").click(function() {
+            $(this).hide();
+            if("Connecting to Wifi".length > 0) {
+                $("span.linkClicked").html("Connecting to Wifi");
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <aside>
+        <script type="text/javascript">
+if(!window.softwareVersion) {
+  // do nothing
+} else if("J4" == window.softwareVersion || "J6" == window.softwareVersion || "J9" == window.softwareVersion) {
+  document.body.className = " postj4";
+} else {
+  document.body.className = " postj2";
+}
+        </script>
+        <img id="image1" width="140" height="110" src="https://d2ejb61d4ryyup.cloudfront.net/ws-4fbfcc50-1ca2-4d56-b3ad-798d1a8a56ca/raw/jaeger/details_img_small.jpg" peggy-base64="jpg">
+    </aside>
+    <header>
+        <h1>Kindle Monthly Book Deals</h1>
+        <h2>Top eBooks on deal</h2>
+    </header>
+    <section id="text" class="content" juno-dtcp-info="Id:text;Role:label;">
+        Pick your next great read from a collection of top eBooks up to 80% off.
+    </section>
+    <section id="action" class="emaillink">
+        <a id="storeLink" juno-dtcp-info="Id:storeLink;Role:link;" class="activeLink transitional-button" href="https://www.amazon.com/gp/kso/click?ref=dealkso_kmd_eink_july24&amp;action=browse&amp;nodeid=3441883011">Learn more</a>
+        <span class="linkClicked" juno-dtcp-info="Id:storeLink;Role:label;"></span>
+    </section>
+    <section id="extra-data" style="display: none">
+        <digital_purchase>
+            <!--[CDATA[
+            {
+            }
+            ]]-->
+        </digital_purchase> 
+    </section>
+    <script type="text/javascript">
+        if(window.softwareVersion) {
+            var activeLinks = document.getElementById("action").getElementsByClassName("activeLink");
+            for (var i=0; i<activeLinks.length; i++) {
+                var activeLink = activeLinks[i];
+                if ( activeLink ) {
+                    if (-1 == activeLink.href.indexOf("softwareVersion=")) {
+                        if(-1 == activeLink.href.indexOf("?")) {
+                            activeLink.href += "?";
+                        }
+                        activeLink.href = activeLink.href + "&softwareVersion=" + window.softwareVersion;
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body></html>
